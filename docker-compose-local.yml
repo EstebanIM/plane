@@ -7,7 +7,7 @@ services:
     volumes:
       - redisdata:/data
     ports:
-      - "6379:6379"
+      - "17379:6379"
 
   plane-mq:
     image: rabbitmq:3.13.6-management-alpine
@@ -45,8 +45,8 @@ services:
       MINIO_ROOT_USER: ${AWS_ACCESS_KEY_ID}
       MINIO_ROOT_PASSWORD: ${AWS_SECRET_ACCESS_KEY}
     ports:
-      - "9000:9000"
-      - "9090:9090"
+      - "17900:9000"
+      - "17990:9090"
 
   plane-db:
     image: postgres:15.7-alpine
@@ -61,7 +61,7 @@ services:
     environment:
       PGDATA: /var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "17432:5432"
 
   api:
     build:
@@ -82,7 +82,7 @@ services:
       - plane-redis
       - plane-mq
     ports:
-      - "8000:8000"
+      - "17000:8000"
 
   worker:
     build:
@@ -139,6 +139,148 @@ services:
     depends_on:
       - plane-db
       - plane-redis
+
+  web:
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile.dev
+    restart: unless-stopped
+    networks:
+      - dev_env
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/web/node_modules
+      - /app/packages/codemods/node_modules
+      - /app/packages/constants/node_modules
+      - /app/packages/decorators/node_modules
+      - /app/packages/editor/node_modules
+      - /app/packages/hooks/node_modules
+      - /app/packages/i18n/node_modules
+      - /app/packages/logger/node_modules
+      - /app/packages/propel/node_modules
+      - /app/packages/services/node_modules
+      - /app/packages/shared-state/node_modules
+      - /app/packages/tailwind-config/node_modules
+      - /app/packages/types/node_modules
+      - /app/packages/typescript-config/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/utils/node_modules
+    env_file:
+      - ./apps/web/.env
+    depends_on:
+      - api
+    ports:
+      - "17300:17300"
+
+  admin:
+    build:
+      context: .
+      dockerfile: ./apps/admin/Dockerfile.dev
+    restart: unless-stopped
+    networks:
+      - dev_env
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/admin/node_modules
+      - /app/packages/codemods/node_modules
+      - /app/packages/constants/node_modules
+      - /app/packages/decorators/node_modules
+      - /app/packages/editor/node_modules
+      - /app/packages/hooks/node_modules
+      - /app/packages/i18n/node_modules
+      - /app/packages/logger/node_modules
+      - /app/packages/propel/node_modules
+      - /app/packages/services/node_modules
+      - /app/packages/shared-state/node_modules
+      - /app/packages/tailwind-config/node_modules
+      - /app/packages/types/node_modules
+      - /app/packages/typescript-config/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/utils/node_modules
+    env_file:
+      - ./apps/admin/.env
+    depends_on:
+      - api
+    ports:
+      - "17301:17301"
+
+  space:
+    build:
+      context: .
+      dockerfile: ./apps/space/Dockerfile.dev
+    restart: unless-stopped
+    networks:
+      - dev_env
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/space/node_modules
+      - /app/packages/codemods/node_modules
+      - /app/packages/constants/node_modules
+      - /app/packages/decorators/node_modules
+      - /app/packages/editor/node_modules
+      - /app/packages/hooks/node_modules
+      - /app/packages/i18n/node_modules
+      - /app/packages/logger/node_modules
+      - /app/packages/propel/node_modules
+      - /app/packages/services/node_modules
+      - /app/packages/shared-state/node_modules
+      - /app/packages/tailwind-config/node_modules
+      - /app/packages/types/node_modules
+      - /app/packages/typescript-config/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/utils/node_modules
+    env_file:
+      - ./apps/space/.env
+    depends_on:
+      - api
+    ports:
+      - "17302:17302"
+
+  live:
+    build:
+      context: .
+      dockerfile: ./apps/live/Dockerfile.dev
+    restart: unless-stopped
+    networks:
+      - dev_env
+    volumes:
+      - ./apps:/app/apps
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/live/node_modules
+      - /app/packages/codemods/node_modules
+      - /app/packages/constants/node_modules
+      - /app/packages/decorators/node_modules
+      - /app/packages/editor/node_modules
+      - /app/packages/hooks/node_modules
+      - /app/packages/i18n/node_modules
+      - /app/packages/logger/node_modules
+      - /app/packages/propel/node_modules
+      - /app/packages/services/node_modules
+      - /app/packages/shared-state/node_modules
+      - /app/packages/tailwind-config/node_modules
+      - /app/packages/types/node_modules
+      - /app/packages/typescript-config/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/utils/node_modules
+    env_file:
+      - ./apps/live/.env
+    environment:
+      API_BASE_URL: "http://api:8000"
+      REDIS_HOST: "plane-redis"
+      REDIS_PORT: "6379"
+      REDIS_URL: "redis://plane-redis:6379/"
+    depends_on:
+      - api
+      - plane-redis
+    ports:
+      - "17310:17310"
 
 volumes:
   redisdata:

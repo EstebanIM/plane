@@ -5,12 +5,15 @@ RUN apk add --no-cache libc6-compat
 # Set working directory
 WORKDIR /app
 
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
 COPY . .
 
 RUN corepack enable pnpm && pnpm add -g turbo
 RUN pnpm install
 
-EXPOSE 3002
+EXPOSE 17302
 
 ENV VITE_SPACE_BASE_PATH="/spaces"
 
