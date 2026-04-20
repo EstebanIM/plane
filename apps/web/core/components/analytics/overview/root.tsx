@@ -8,7 +8,9 @@ import React from "react";
 import AnalyticsWrapper from "../analytics-wrapper";
 import TotalInsights from "../total-insights";
 import ActiveProjects from "./active-projects";
+import LabelsTreeMap from "./labels-treemap";
 import ProjectInsights from "./project-insights";
+import StateDistribution from "./state-distribution";
 
 function Overview() {
   return (
@@ -18,6 +20,10 @@ function Overview() {
         <div className="grid grid-cols-1 gap-14 md:grid-cols-5">
           <ProjectInsights />
           <ActiveProjects />
+        </div>
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2">
+          <StateDistribution />
+          <LabelsTreeMap />
         </div>
       </div>
     </AnalyticsWrapper>

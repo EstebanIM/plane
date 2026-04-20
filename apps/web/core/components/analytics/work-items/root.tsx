@@ -7,8 +7,11 @@
 import React from "react";
 import AnalyticsWrapper from "../analytics-wrapper";
 import TotalInsights from "../total-insights";
+import AssigneeWorkload from "./assignee-workload";
 import CreatedVsResolved from "./created-vs-resolved";
+import CreationTrend from "./creation-trend";
 import CustomizedInsights from "./customized-insights";
+import PriorityDistribution from "./priority-distribution";
 import WorkItemsInsightTable from "./workitems-insight-table";
 
 function WorkItems() {
@@ -16,7 +19,12 @@ function WorkItems() {
     <AnalyticsWrapper i18nTitle="sidebar.work_items">
       <div className="flex flex-col gap-14">
         <TotalInsights analyticsType="work-items" />
-        <CreatedVsResolved />
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2">
+          <CreatedVsResolved />
+          <CreationTrend />
+        </div>
+        <PriorityDistribution />
+        <AssigneeWorkload />
         <CustomizedInsights />
         <WorkItemsInsightTable />
       </div>

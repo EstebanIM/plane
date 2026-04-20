@@ -1219,6 +1219,11 @@ export default {
     active_projects: "Active Projects",
     customized_insights: "Customized Insights",
     created_vs_resolved: "Created vs Resolved",
+    state_distribution: "State Distribution",
+    priority_distribution: "Priority Distribution",
+    assignee_workload: "Assignee Workload",
+    labels_treemap: "Labels Distribution",
+    creation_trend: "Creation Trend (by Priority)",
     empty_state: {
       project_insights: {
         title: "No data yet",
