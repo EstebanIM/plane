@@ -6,6 +6,7 @@
 
 import { observer } from "mobx-react";
 // components
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 // hooks
 import { useWorkspace } from "@/hooks/store/use-workspace";
@@ -18,10 +19,10 @@ function WorkspaceActiveCyclesPage() {
   const pageTitle = currentWorkspace?.name ? `${currentWorkspace?.name} - Active Cycles` : undefined;
 
   return (
-    <>
+    <FeatureGate flag="ENABLE_CYCLES">
       <PageHead title={pageTitle} />
       <WorkspaceActiveCyclesRoot />
-    </>
+    </FeatureGate>
   );
 }
 

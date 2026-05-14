@@ -6,7 +6,10 @@
 
 import { useState } from "react";
 import { observer } from "mobx-react";
+import { Navigate } from "react-router";
 import useSWR from "swr";
+// local constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { TOAST_TYPE, setToast } from "@plane/propel/toast";
 import type { IWebhook } from "@plane/types";
@@ -76,6 +79,10 @@ function WebhookDetailsPage({ params }: Route.ComponentProps) {
       });
     }
   };
+
+  if (!FEATURE_FLAGS.ENABLE_WEBHOOKS) {
+    return <Navigate to={`/${workspaceSlug}/`} replace />;
+  }
 
   if (!isAdmin)
     return (

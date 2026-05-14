@@ -5,9 +5,12 @@
  */
 
 import { observer } from "mobx-react";
+import { Navigate, useParams } from "react-router";
 import useSWR from "swr";
 // components
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
+// local constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 import { NotAuthorizedView } from "@/components/auth-screens/not-authorized-view";
 import { PageHead } from "@/components/core/page-title";
 import { SingleIntegrationCard } from "@/components/integration/single-integration-card";
@@ -24,6 +27,8 @@ import { IntegrationService } from "@/services/integrations";
 const integrationService = new IntegrationService();
 
 function WorkspaceIntegrationsPage() {
+  // route params
+  const { workspaceSlug } = useParams<{ workspaceSlug: string }>();
   // store hooks
   const { currentWorkspace } = useWorkspace();
   const { allowPermissions } = useUserPermissions();
@@ -34,6 +39,10 @@ function WorkspaceIntegrationsPage() {
   const { data: appIntegrations } = useSWR(isAdmin ? APP_INTEGRATIONS : null, () =>
     isAdmin ? integrationService.getAppIntegrationsList() : null
   );
+
+  if (!FEATURE_FLAGS.ENABLE_INTEGRATIONS) {
+    return <Navigate to={`/${workspaceSlug ?? ""}/`} replace />;
+  }
 
   if (!isAdmin) return <NotAuthorizedView section="settings" className="h-auto" />;
 

@@ -13,10 +13,17 @@ import { useTranslation } from "@plane/i18n";
 import { joinUrlPath } from "@plane/utils";
 // components
 import { SettingsSidebarItem } from "@/components/settings/sidebar/item";
+// constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 // hooks
 import { useUserPermissions } from "@/hooks/store/user";
 // local imports
 import { WORKSPACE_SETTINGS_ICONS } from "./item-icon";
+
+const DISABLED_SETTINGS_KEYS = new Set<string>([
+  ...(FEATURE_FLAGS.ENABLE_WEBHOOKS ? [] : ["webhooks"]),
+  ...(FEATURE_FLAGS.ENABLE_INTEGRATIONS ? [] : ["integrations"]),
+]);
 
 export const WorkspaceSettingsSidebarItemCategories = observer(function WorkspaceSettingsSidebarItemCategories() {
   // params
@@ -30,7 +37,9 @@ export const WorkspaceSettingsSidebarItemCategories = observer(function Workspac
   return (
     <div className="mt-3 flex flex-col divide-y divide-subtle px-3">
       {WORKSPACE_SETTINGS_CATEGORIES.map((category) => {
-        const categoryItems = GROUPED_WORKSPACE_SETTINGS[category];
+        const categoryItems = GROUPED_WORKSPACE_SETTINGS[category].filter(
+          (item) => !DISABLED_SETTINGS_KEYS.has(item.key)
+        );
         const accessibleItems = categoryItems.filter((item) =>
           allowPermissions(item.access, EUserPermissionsLevel.WORKSPACE, workspaceSlug)
         );

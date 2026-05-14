@@ -11,6 +11,8 @@ import { Disclosure, Transition } from "@headlessui/react";
 // plane imports
 import { AnalyticsIcon, CycleIcon, ProjectIcon, ViewsIcon } from "@plane/propel/icons";
 import { EUserWorkspaceRoles } from "@plane/types";
+// constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 // hooks
 import useLocalStorage from "@/hooks/use-local-storage";
 // local imports
@@ -40,13 +42,17 @@ export const SidebarWorkspaceMenu = observer(function SidebarWorkspaceMenu() {
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER, EUserWorkspaceRoles.GUEST],
       Icon: ViewsIcon,
     },
-    {
-      key: "active-cycles",
-      labelTranslationKey: "sidebar.cycles",
-      href: `/${workspaceSlug}/active-cycles/`,
-      access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
-      Icon: CycleIcon,
-    },
+    ...(FEATURE_FLAGS.ENABLE_CYCLES
+      ? [
+          {
+            key: "active-cycles",
+            labelTranslationKey: "sidebar.cycles",
+            href: `/${workspaceSlug}/active-cycles/`,
+            access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
+            Icon: CycleIcon,
+          },
+        ]
+      : []),
     {
       key: "analytics",
       labelTranslationKey: "sidebar.analytics",

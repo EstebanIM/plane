@@ -8,14 +8,14 @@ export default {
   sidebar: {
     projects: "Proyectos",
     pages: "Páginas",
-    new_work_item: "Nuevo elemento de trabajo",
+    new_work_item: "Nuevo tarea",
     home: "Inicio",
     your_work: "Tu trabajo",
     inbox: "Bandeja de entrada",
     workspace: "Espacio de trabajo",
     views: "Vistas",
     analytics: "Análisis",
-    work_items: "Elementos de trabajo",
+    work_items: "Tareas",
     cycles: "Ciclos",
     modules: "Módulos",
     intake: "Entrada",
@@ -262,7 +262,7 @@ export default {
   failed_to_update_the_theme: "Error al actualizar el tema",
   email_notifications: "Notificaciones por correo electrónico",
   stay_in_the_loop_on_issues_you_are_subscribed_to_enable_this_to_get_notified:
-    "Mantente al tanto de los elementos de trabajo a los que estás suscrito. Activa esto para recibir notificaciones.",
+    "Mantente al tanto de los tareas a los que estás suscrito. Activa esto para recibir notificaciones.",
   email_notification_setting_updated_successfully:
     "Configuración de notificaciones por correo electrónico actualizada exitosamente",
   failed_to_update_email_notification_setting:
@@ -270,13 +270,13 @@ export default {
   notify_me_when: "Notificarme cuando",
   property_changes: "Cambios de propiedades",
   property_changes_description:
-    "Notificarme cuando cambien las propiedades de los elementos de trabajo como asignados, prioridad, estimaciones o cualquier otra cosa.",
+    "Notificarme cuando cambien las propiedades de los tareas como asignados, prioridad, estimaciones o cualquier otra cosa.",
   state_change: "Cambio de estado",
-  state_change_description: "Notificarme cuando los elementos de trabajo se muevan a un estado diferente",
-  issue_completed: "Elemento de trabajo completado",
-  issue_completed_description: "Notificarme solo cuando se complete un elemento de trabajo",
+  state_change_description: "Notificarme cuando los tareas se muevan a un estado diferente",
+  issue_completed: "Tarea completado",
+  issue_completed_description: "Notificarme solo cuando se complete un tarea",
   comments: "Comentarios",
-  comments_description: "Notificarme cuando alguien deje un comentario en el elemento de trabajo",
+  comments_description: "Notificarme cuando alguien deje un comentario en el tarea",
   mentions: "Menciones",
   mentions_description: "Notificarme solo cuando alguien me mencione en los comentarios o descripción",
   old_password: "Contraseña anterior",
@@ -285,7 +285,7 @@ export default {
   signing_out: "Cerrando sesión",
   active_cycles: "Ciclos activos",
   active_cycles_description:
-    "Monitorea ciclos en todos los proyectos, rastrea elementos de trabajo de alta prioridad y enfócate en los ciclos que necesitan atención.",
+    "Monitorea ciclos en todos los proyectos, rastrea tareas de alta prioridad y enfócate en los ciclos que necesitan atención.",
   on_demand_snapshots_of_all_your_cycles: "Instantáneas bajo demanda de todos tus ciclos",
   upgrade: "Actualizar",
   "10000_feet_view": "Vista panorámica de todos los ciclos activos.",
@@ -297,9 +297,9 @@ export default {
   compare_burndowns: "Compara los burndowns.",
   compare_burndowns_description:
     "Monitorea cómo se está desempeñando cada uno de tus equipos con un vistazo al informe de burndown de cada ciclo.",
-  quickly_see_make_or_break_issues: "Ve rápidamente los elementos de trabajo críticos.",
+  quickly_see_make_or_break_issues: "Ve rápidamente los tareas críticos.",
   quickly_see_make_or_break_issues_description:
-    "Previsualiza elementos de trabajo de alta prioridad para cada ciclo contra fechas de vencimiento. Vélos todos por ciclo con un clic.",
+    "Previsualiza tareas de alta prioridad para cada ciclo contra fechas de vencimiento. Vélos todos por ciclo con un clic.",
   zoom_into_cycles_that_need_attention: "Enfócate en los ciclos que necesitan atención.",
   zoom_into_cycles_that_need_attention_description:
     "Investiga el estado de cualquier ciclo que no se ajuste a las expectativas con un clic.",
@@ -310,7 +310,7 @@ export default {
   workspace_invites: "Invitaciones al espacio de trabajo",
   enter_god_mode: "Entrar en modo dios",
   workspace_logo: "Logo del espacio de trabajo",
-  new_issue: "Nuevo elemento de trabajo",
+  new_issue: "Nuevo tarea",
   your_work: "Tu trabajo",
   workspace_dashboards: "Paneles de control",
   drafts: "Borradores",
@@ -340,8 +340,7 @@ export default {
   failed_to_remove_project_from_favorites:
     "No se pudo eliminar el proyecto de favoritos. Por favor, inténtalo de nuevo.",
   project_created_successfully: "Proyecto creado exitosamente",
-  project_created_successfully_description:
-    "Proyecto creado exitosamente. Ahora puedes comenzar a agregar elementos de trabajo.",
+  project_created_successfully_description: "Proyecto creado exitosamente. Ahora puedes comenzar a agregar tareas.",
   project_name_already_taken: "El nombre del proyecto ya está en uso.",
   project_identifier_already_taken: "El identificador del proyecto ya está en uso.",
   project_cover_image_alt: "Imagen de portada del proyecto",
@@ -351,8 +350,7 @@ export default {
   project_id_must_be_at_least_1_character: "El ID del proyecto debe tener al menos 1 carácter",
   project_id_must_be_at_most_5_characters: "El ID del proyecto debe tener como máximo 5 caracteres",
   project_id: "ID del proyecto",
-  project_id_tooltip_content:
-    "Te ayuda a identificar elementos de trabajo en el proyecto de manera única. Máximo 10 caracteres.",
+  project_id_tooltip_content: "Te ayuda a identificar tareas en el proyecto de manera única. Máximo 10 caracteres.",
   description_placeholder: "Descripción",
   only_alphanumeric_non_latin_characters_allowed: "Solo se permiten caracteres alfanuméricos y no latinos.",
   project_id_is_required: "El ID del proyecto es requerido",
@@ -386,14 +384,14 @@ export default {
   drag_to_rearrange: "Arrastra para reorganizar",
   congrats: "¡Felicitaciones!",
   open_project: "Abrir proyecto",
-  issues: "Elementos de trabajo",
+  issues: "Tareas",
   cycles: "Ciclos",
   modules: "Módulos",
   pages: "Páginas",
   intake: "Entrada",
   time_tracking: "Seguimiento de tiempo",
   work_management: "Gestión del trabajo",
-  projects_and_issues: "Proyectos y elementos de trabajo",
+  projects_and_issues: "Proyectos y tareas",
   projects_and_issues_description: "Activa o desactiva estos en este proyecto.",
   cycles_description:
     "Organiza el trabajo por proyecto en períodos de tiempo y ajusta la duración según sea necesario. Un ciclo puede ser de 2 semanas y el siguiente de 1 semana.",
@@ -403,7 +401,7 @@ export default {
   pages_description: "Crea y edita contenido libre; notas, documentos, lo que sea.",
   intake_description:
     "Permite que personas ajenas al equipo compartan errores, comentarios y sugerencias sin interrumpir tu flujo de trabajo.",
-  time_tracking_description: "Registra el tiempo dedicado a elementos de trabajo y proyectos.",
+  time_tracking_description: "Registra el tiempo dedicado a tareas y proyectos.",
   work_management_description: "Gestiona tu trabajo y proyectos con facilidad.",
   documentation: "Documentación",
   contact_sales: "Contactar ventas",
@@ -438,30 +436,30 @@ export default {
   workspace_name: "nombre-del-espacio-de-trabajo",
   deactivate_your_account: "Desactivar tu cuenta",
   deactivate_your_account_description:
-    "Una vez desactivada, no se te podrán asignar elementos de trabajo ni se te facturará por tu espacio de trabajo. Para reactivar tu cuenta, necesitarás una invitación a un espacio de trabajo con esta dirección de correo electrónico.",
+    "Una vez desactivada, no se te podrán asignar tareas ni se te facturará por tu espacio de trabajo. Para reactivar tu cuenta, necesitarás una invitación a un espacio de trabajo con esta dirección de correo electrónico.",
   deactivating: "Desactivando",
   confirm: "Confirmar",
   confirming: "Confirmando",
   draft_created: "Borrador creado",
-  issue_created_successfully: "Elemento de trabajo creado exitosamente",
+  issue_created_successfully: "Tarea creado exitosamente",
   draft_creation_failed: "Error al crear borrador",
-  issue_creation_failed: "Error al crear elemento de trabajo",
-  draft_issue: "Borrador de elemento de trabajo",
-  issue_updated_successfully: "Elemento de trabajo actualizado exitosamente",
-  issue_could_not_be_updated: "El elemento de trabajo no pudo ser actualizado",
+  issue_creation_failed: "Error al crear tarea",
+  draft_issue: "Borrador de tarea",
+  issue_updated_successfully: "Tarea actualizado exitosamente",
+  issue_could_not_be_updated: "El tarea no pudo ser actualizado",
   create_a_draft: "Crear un borrador",
   save_to_drafts: "Guardar en borradores",
   save: "Guardar",
   update: "Actualizar",
   updating: "Actualizando",
-  create_new_issue: "Crear nuevo elemento de trabajo",
+  create_new_issue: "Crear nuevo tarea",
   editor_is_not_ready_to_discard_changes: "El editor no está listo para descartar cambios",
-  failed_to_move_issue_to_project: "Error al mover elemento de trabajo al proyecto",
+  failed_to_move_issue_to_project: "Error al mover tarea al proyecto",
   create_more: "Crear más",
   add_to_project: "Agregar al proyecto",
   discard: "Descartar",
-  duplicate_issue_found: "Se encontró un elemento de trabajo duplicado",
-  duplicate_issues_found: "Se encontraron elementos de trabajo duplicados",
+  duplicate_issue_found: "Se encontró un tarea duplicado",
+  duplicate_issues_found: "Se encontraron tareas duplicados",
   no_matching_results: "No hay resultados coincidentes",
   title_is_required: "El título es requerido",
   title: "Título",
@@ -482,8 +480,8 @@ export default {
   end_date: "Fecha de fin",
   due_date: "Fecha de vencimiento",
   estimate: "Estimación",
-  change_parent_issue: "Cambiar elemento de trabajo padre",
-  remove_parent_issue: "Eliminar elemento de trabajo padre",
+  change_parent_issue: "Cambiar tarea padre",
+  remove_parent_issue: "Eliminar tarea padre",
   add_parent: "Agregar padre",
   loading_members: "Cargando miembros",
   view_link_copied_to_clipboard: "Enlace de vista copiado al portapapeles.",
@@ -506,15 +504,15 @@ export default {
   show_less: "Mostrar menos",
   no_data_yet: "Aún no hay datos",
   syncing: "Sincronizando",
-  add_work_item: "Agregar elemento de trabajo",
+  add_work_item: "Agregar tarea",
   advanced_description_placeholder: "Presiona '/' para comandos",
-  create_work_item: "Crear elemento de trabajo",
+  create_work_item: "Crear tarea",
   attachments: "Archivos adjuntos",
   declining: "Rechazando",
   declined: "Rechazado",
   decline: "Rechazar",
   unassigned: "Sin asignar",
-  work_items: "Elementos de trabajo",
+  work_items: "Tareas",
   add_link: "Agregar enlace",
   points: "Puntos",
   no_assignee: "Sin asignado",
@@ -621,14 +619,14 @@ export default {
       empty: {
         project: "Tus proyectos recientes aparecerán aquí una vez que visites uno.",
         page: "Tus páginas recientes aparecerán aquí una vez que visites una.",
-        issue: "Tus elementos de trabajo recientes aparecerán aquí una vez que visites uno.",
+        issue: "Tus tareas recientes aparecerán aquí una vez que visites uno.",
         default: "Aún no tienes elementos recientes.",
       },
       filters: {
         all: "Todos",
         projects: "Proyectos",
         pages: "Páginas",
-        issues: "Elementos de trabajo",
+        issues: "Tareas",
       },
     },
     new_at_plane: {
@@ -701,9 +699,9 @@ export default {
     group_by: "Agrupar por",
     epic: "Epic",
     epics: "Epics",
-    work_item: "Elemento de trabajo",
-    work_items: "Elementos de trabajo",
-    sub_work_item: "Sub-elemento de trabajo",
+    work_item: "Tarea",
+    work_items: "Tareas",
+    sub_work_item: "Subtarea",
     add: "Agregar",
     warning: "Advertencia",
     updating: "Actualizando",
@@ -742,7 +740,7 @@ export default {
       private: "Privado",
     },
     done: "Hecho",
-    sub_work_items: "Sub-elementos de trabajo",
+    sub_work_items: "Subtareas",
     comment: "Comentario",
     workspace_level: "Nivel de espacio de trabajo",
     order_by: {
@@ -768,8 +766,8 @@ export default {
     copied: "¡Copiado!",
     link_copied: "¡Enlace copiado!",
     link_copied_to_clipboard: "Enlace copiado al portapapeles",
-    copied_to_clipboard: "Enlace del elemento de trabajo copiado al portapapeles",
-    is_copied_to_clipboard: "El elemento de trabajo está copiado al portapapeles",
+    copied_to_clipboard: "Enlace del tarea copiado al portapapeles",
+    is_copied_to_clipboard: "El tarea está copiado al portapapeles",
     no_links_added_yet: "Aún no se han agregado enlaces",
     add_link: "Agregar enlace",
     links: "Enlaces",
@@ -979,51 +977,50 @@ export default {
     },
   },
   issue: {
-    label: "{count, plural, one {Elemento de trabajo} other {Elementos de trabajo}}",
-    all: "Todos los elementos de trabajo",
-    edit: "Editar elemento de trabajo",
+    label: "{count, plural, one {Tarea} other {Tareas}}",
+    all: "Todos los tareas",
+    edit: "Editar tarea",
     title: {
-      label: "Título del elemento de trabajo",
-      required: "El título del elemento de trabajo es obligatorio.",
+      label: "Título del tarea",
+      required: "El título del tarea es obligatorio.",
     },
     add: {
-      press_enter: "Presiona 'Enter' para agregar otro elemento de trabajo",
-      label: "Agregar elemento de trabajo",
+      press_enter: "Presiona 'Enter' para agregar otro tarea",
+      label: "Agregar tarea",
       cycle: {
-        failed: "No se pudo agregar el elemento de trabajo al ciclo. Por favor, inténtalo de nuevo.",
-        success:
-          "{count, plural, one {Elemento de trabajo agregado} other {Elementos de trabajo agregados}} al ciclo correctamente.",
-        loading: "Agregando {count, plural, one {elemento de trabajo} other {elementos de trabajo}} al ciclo",
+        failed: "No se pudo agregar el tarea al ciclo. Por favor, inténtalo de nuevo.",
+        success: "{count, plural, one {Tarea agregado} other {Tareas agregados}} al ciclo correctamente.",
+        loading: "Agregando {count, plural, one {tarea} other {tareas}} al ciclo",
       },
       assignee: "Agregar asignados",
       start_date: "Agregar fecha de inicio",
       due_date: "Agregar fecha de vencimiento",
-      parent: "Agregar elemento de trabajo padre",
-      sub_issue: "Agregar sub-elemento de trabajo",
+      parent: "Agregar tarea padre",
+      sub_issue: "Agregar sub-tarea",
       relation: "Agregar relación",
       link: "Agregar enlace",
-      existing: "Agregar elemento de trabajo existente",
+      existing: "Agregar tarea existente",
     },
     remove: {
-      label: "Eliminar elemento de trabajo",
+      label: "Eliminar tarea",
       cycle: {
-        loading: "Eliminando elemento de trabajo del ciclo",
-        success: "Elemento de trabajo eliminado del ciclo correctamente.",
-        failed: "No se pudo eliminar el elemento de trabajo del ciclo. Por favor, inténtalo de nuevo.",
+        loading: "Eliminando tarea del ciclo",
+        success: "Tarea eliminado del ciclo correctamente.",
+        failed: "No se pudo eliminar el tarea del ciclo. Por favor, inténtalo de nuevo.",
       },
       module: {
-        loading: "Eliminando elemento de trabajo del módulo",
-        success: "Elemento de trabajo eliminado del módulo correctamente.",
-        failed: "No se pudo eliminar el elemento de trabajo del módulo. Por favor, inténtalo de nuevo.",
+        loading: "Eliminando tarea del módulo",
+        success: "Tarea eliminado del módulo correctamente.",
+        failed: "No se pudo eliminar el tarea del módulo. Por favor, inténtalo de nuevo.",
       },
       parent: {
-        label: "Eliminar elemento de trabajo padre",
+        label: "Eliminar tarea padre",
       },
     },
-    new: "Nuevo elemento de trabajo",
-    adding: "Agregando elemento de trabajo",
+    new: "Nuevo tarea",
+    adding: "Agregando tarea",
     create: {
-      success: "Elemento de trabajo creado correctamente",
+      success: "Tarea creado correctamente",
     },
     priority: {
       urgent: "Urgente",
@@ -1035,12 +1032,12 @@ export default {
       properties: {
         label: "Mostrar propiedades",
         id: "ID",
-        issue_type: "Tipo de elemento de trabajo",
+        issue_type: "Tipo de tarea",
         sub_issue_count: "Cantidad de sub-elementos",
         attachment_count: "Cantidad de archivos adjuntos",
         created_on: "Creado el",
-        sub_issue: "Sub-elemento de trabajo",
-        work_item_count: "Recuento de elementos de trabajo",
+        sub_issue: "Subtarea",
+        work_item_count: "Recuento de tareas",
       },
       extra: {
         show_sub_issues: "Mostrar sub-elementos",
@@ -1094,36 +1091,36 @@ export default {
     },
     empty_state: {
       issue_detail: {
-        title: "El elemento de trabajo no existe",
-        description: "El elemento de trabajo que buscas no existe, ha sido archivado o ha sido eliminado.",
+        title: "El tarea no existe",
+        description: "El tarea que buscas no existe, ha sido archivado o ha sido eliminado.",
         primary_button: {
-          text: "Ver otros elementos de trabajo",
+          text: "Ver otros tareas",
         },
       },
     },
     sibling: {
-      label: "Elementos de trabajo hermanos",
+      label: "Tareas hermanos",
     },
     archive: {
-      description: "Solo los elementos de trabajo completados\no cancelados pueden ser archivados",
-      label: "Archivar elemento de trabajo",
+      description: "Solo los tareas completados\no cancelados pueden ser archivados",
+      label: "Archivar tarea",
       confirm_message:
-        "¿Estás seguro de que quieres archivar el elemento de trabajo? Todos tus elementos archivados pueden ser restaurados más tarde.",
+        "¿Estás seguro de que quieres archivar el tarea? Todos tus elementos archivados pueden ser restaurados más tarde.",
       success: {
         label: "Archivo exitoso",
         message: "Tus archivos se pueden encontrar en los archivos del proyecto.",
       },
       failed: {
-        message: "No se pudo archivar el elemento de trabajo. Por favor, inténtalo de nuevo.",
+        message: "No se pudo archivar el tarea. Por favor, inténtalo de nuevo.",
       },
     },
     restore: {
       success: {
         title: "Restauración exitosa",
-        message: "Tu elemento de trabajo se puede encontrar en los elementos de trabajo del proyecto.",
+        message: "Tu tarea se puede encontrar en los tareas del proyecto.",
       },
       failed: {
-        message: "No se pudo restaurar el elemento de trabajo. Por favor, inténtalo de nuevo.",
+        message: "No se pudo restaurar el tarea. Por favor, inténtalo de nuevo.",
       },
     },
     relation: {
@@ -1132,25 +1129,25 @@ export default {
       blocked_by: "Bloqueado por",
       blocking: "Bloqueando",
     },
-    copy_link: "Copiar enlace del elemento de trabajo",
+    copy_link: "Copiar enlace del tarea",
     delete: {
-      label: "Eliminar elemento de trabajo",
-      error: "Error al eliminar el elemento de trabajo",
+      label: "Eliminar tarea",
+      error: "Error al eliminar el tarea",
     },
     subscription: {
       actions: {
-        subscribed: "Suscrito al elemento de trabajo correctamente",
-        unsubscribed: "Desuscrito del elemento de trabajo correctamente",
+        subscribed: "Suscrito al tarea correctamente",
+        unsubscribed: "Desuscrito del tarea correctamente",
       },
     },
     select: {
-      error: "Por favor selecciona al menos un elemento de trabajo",
-      empty: "No hay elementos de trabajo seleccionados",
+      error: "Por favor selecciona al menos un tarea",
+      empty: "No hay tareas seleccionados",
       add_selected: "Agregar elementos seleccionados",
       select_all: "Seleccionar todo",
       deselect_all: "Deseleccionar todo",
     },
-    open_in_full_screen: "Abrir elemento de trabajo en pantalla completa",
+    open_in_full_screen: "Abrir tarea en pantalla completa",
   },
   attachment: {
     error: "No se pudo adjuntar el archivo. Intenta subirlo de nuevo.",
@@ -1179,13 +1176,13 @@ export default {
     },
     empty_state: {
       sub_list_filters: {
-        title: "No tienes sub-elementos de trabajo que coincidan con los filtros que has aplicado.",
-        description: "Para ver todos los sub-elementos de trabajo, elimina todos los filtros aplicados.",
+        title: "No tienes sub-tareas que coincidan con los filtros que has aplicado.",
+        description: "Para ver todos los sub-tareas, elimina todos los filtros aplicados.",
         action: "Eliminar filtros",
       },
       list_filters: {
-        title: "No tienes elementos de trabajo que coincidan con los filtros que has aplicado.",
-        description: "Para ver todos los elementos de trabajo, elimina todos los filtros aplicados.",
+        title: "No tienes tareas que coincidan con los filtros que has aplicado.",
+        description: "Para ver todos los tareas, elimina todos los filtros aplicados.",
         action: "Eliminar filtros",
       },
     },
@@ -1224,30 +1221,30 @@ export default {
     },
     modals: {
       decline: {
-        title: "Rechazar elemento de trabajo",
-        content: "¿Estás seguro de que quieres rechazar el elemento de trabajo {value}?",
+        title: "Rechazar tarea",
+        content: "¿Estás seguro de que quieres rechazar el tarea {value}?",
       },
       delete: {
-        title: "Eliminar elemento de trabajo",
-        content: "¿Estás seguro de que quieres eliminar el elemento de trabajo {value}?",
-        success: "Elemento de trabajo eliminado correctamente",
+        title: "Eliminar tarea",
+        content: "¿Estás seguro de que quieres eliminar el tarea {value}?",
+        success: "Tarea eliminado correctamente",
       },
     },
     errors: {
-      snooze_permission: "Solo los administradores del proyecto pueden posponer/desposponer elementos de trabajo",
-      accept_permission: "Solo los administradores del proyecto pueden aceptar elementos de trabajo",
-      decline_permission: "Solo los administradores del proyecto pueden rechazar elementos de trabajo",
+      snooze_permission: "Solo los administradores del proyecto pueden posponer/desposponer tareas",
+      accept_permission: "Solo los administradores del proyecto pueden aceptar tareas",
+      decline_permission: "Solo los administradores del proyecto pueden rechazar tareas",
     },
     actions: {
       accept: "Aceptar",
       decline: "Rechazar",
       snooze: "Posponer",
       unsnooze: "Desposponer",
-      copy: "Copiar enlace del elemento de trabajo",
+      copy: "Copiar enlace del tarea",
       delete: "Eliminar",
-      open: "Abrir elemento de trabajo",
+      open: "Abrir tarea",
       mark_as_duplicate: "Marcar como duplicado",
-      move: "Mover {value} a elementos de trabajo del proyecto",
+      move: "Mover {value} a tareas del proyecto",
     },
     source: {
       "in-app": "en-app",
@@ -1260,7 +1257,7 @@ export default {
     label: "Intake",
     page_label: "{workspace} - Intake",
     modal: {
-      title: "Crear elemento de trabajo de intake",
+      title: "Crear tarea de intake",
     },
     tabs: {
       open: "Abiertos",
@@ -1268,20 +1265,19 @@ export default {
     },
     empty_state: {
       sidebar_open_tab: {
-        title: "No hay elementos de trabajo abiertos",
-        description: "Encuentra elementos de trabajo abiertos aquí. Crea un nuevo elemento de trabajo.",
+        title: "No hay tareas abiertos",
+        description: "Encuentra tareas abiertos aquí. Crea un nuevo tarea.",
       },
       sidebar_closed_tab: {
-        title: "No hay elementos de trabajo cerrados",
-        description: "Todos los elementos de trabajo, ya sean aceptados o rechazados, se pueden encontrar aquí.",
+        title: "No hay tareas cerrados",
+        description: "Todos los tareas, ya sean aceptados o rechazados, se pueden encontrar aquí.",
       },
       sidebar_filter: {
-        title: "No hay elementos de trabajo coincidentes",
-        description:
-          "Ningún elemento de trabajo coincide con el filtro aplicado en intake. Crea un nuevo elemento de trabajo.",
+        title: "No hay tareas coincidentes",
+        description: "Ningún tarea coincide con el filtro aplicado en intake. Crea un nuevo tarea.",
       },
       detail: {
-        title: "Selecciona un elemento de trabajo para ver sus detalles.",
+        title: "Selecciona un tarea para ver sus detalles.",
       },
     },
   },
@@ -1343,7 +1339,7 @@ export default {
       general: {
         title: "Resumen de tus proyectos, actividad y métricas",
         description:
-          "Bienvenido a Plane, estamos emocionados de tenerte aquí. Crea tu primer proyecto y rastrea tus elementos de trabajo, y esta página se transformará en un espacio que te ayuda a progresar. Los administradores también verán elementos que ayudan a su equipo a progresar.",
+          "Bienvenido a Plane, estamos emocionados de tenerte aquí. Crea tu primer proyecto y rastrea tus tareas, y esta página se transformará en un espacio que te ayuda a progresar. Los administradores también verán elementos que ayudan a su equipo a progresar.",
         primary_button: {
           text: "Construye tu primer proyecto",
           comic: {
@@ -1360,26 +1356,26 @@ export default {
     page_label: "{workspace} - Análisis",
     open_tasks: "Total de tareas abiertas",
     error: "Hubo un error al obtener los datos.",
-    work_items_closed_in: "Elementos de trabajo cerrados en",
+    work_items_closed_in: "Tareas cerrados en",
     selected_projects: "Proyectos seleccionados",
     total_members: "Total de miembros",
     total_cycles: "Total de Ciclos",
     total_modules: "Total de Módulos",
     pending_work_items: {
-      title: "Elementos de trabajo pendientes",
-      empty_state: "El análisis de elementos de trabajo pendientes por compañeros aparece aquí.",
+      title: "Tareas pendientes",
+      empty_state: "El análisis de tareas pendientes por compañeros aparece aquí.",
     },
     work_items_closed_in_a_year: {
-      title: "Elementos de trabajo cerrados en un año",
-      empty_state: "Cierra elementos de trabajo para ver su análisis en forma de gráfico.",
+      title: "Tareas cerrados en un año",
+      empty_state: "Cierra tareas para ver su análisis en forma de gráfico.",
     },
     most_work_items_created: {
-      title: "Más elementos de trabajo creados",
-      empty_state: "Los compañeros y el número de elementos de trabajo creados por ellos aparecen aquí.",
+      title: "Más tareas creados",
+      empty_state: "Los compañeros y el número de tareas creados por ellos aparecen aquí.",
     },
     most_work_items_closed: {
-      title: "Más elementos de trabajo cerrados",
-      empty_state: "Los compañeros y el número de elementos de trabajo cerrados por ellos aparecen aquí.",
+      title: "Más tareas cerrados",
+      empty_state: "Los compañeros y el número de tareas cerrados por ellos aparecen aquí.",
     },
     tabs: {
       scope_and_demand: "Alcance y Demanda",
@@ -1387,16 +1383,16 @@ export default {
     },
     empty_state: {
       customized_insights: {
-        description: "Los elementos de trabajo asignados a ti, desglosados por estado, aparecerán aquí.",
+        description: "Los tareas asignados a ti, desglosados por estado, aparecerán aquí.",
         title: "Aún no hay datos",
       },
       created_vs_resolved: {
-        description: "Los elementos de trabajo creados y resueltos con el tiempo aparecerán aquí.",
+        description: "Los tareas creados y resueltos con el tiempo aparecerán aquí.",
         title: "Aún no hay datos",
       },
       project_insights: {
         title: "Aún no hay datos",
-        description: "Los elementos de trabajo asignados a ti, desglosados por estado, aparecerán aquí.",
+        description: "Los tareas asignados a ti, desglosados por estado, aparecerán aquí.",
       },
       general: {
         title:
@@ -1408,12 +1404,17 @@ export default {
           comic: {
             title: "Analytics funciona mejor con Ciclos + Módulos",
             description:
-              "Primero, encuadra tus elementos de trabajo en Ciclos y, si puedes, agrupa elementos que abarcan más de un ciclo en Módulos. Revisa ambos en la navegación izquierda.",
+              "Primero, encuadra tus tareas en Ciclos y, si puedes, agrupa elementos que abarcan más de un ciclo en Módulos. Revisa ambos en la navegación izquierda.",
           },
         },
       },
     },
     created_vs_resolved: "Creado vs Resuelto",
+    state_distribution: "Distribución por Estado",
+    priority_distribution: "Distribución por Prioridad",
+    assignee_workload: "Carga por Asignado",
+    labels_treemap: "Distribución por Etiquetas",
+    creation_trend: "Tendencia de Creación (por Prioridad)",
     customized_insights: "Información personalizada",
     backlog_work_items: "{entity} en backlog",
     active_projects: "Proyectos activos",
@@ -1451,7 +1452,7 @@ export default {
       permission: "No tienes permiso para realizar esta acción.",
       cycle_delete: "Error al eliminar el ciclo",
       module_delete: "Error al eliminar el módulo",
-      issue_delete: "Error al eliminar el elemento de trabajo",
+      issue_delete: "Error al eliminar el tarea",
     },
     state: {
       backlog: "Pendiente",
@@ -1489,8 +1490,7 @@ export default {
       },
       no_projects: {
         title: "Sin proyecto",
-        description:
-          "Para crear elementos de trabajo o gestionar tu trabajo, necesitas crear un proyecto o ser parte de uno.",
+        description: "Para crear tareas o gestionar tu trabajo, necesitas crear un proyecto o ser parte de uno.",
         primary_button: {
           text: "Inicia tu primer proyecto",
           comic: {
@@ -1514,34 +1514,33 @@ export default {
     add_view: "Agregar vista",
     empty_state: {
       "all-issues": {
-        title: "No hay elementos de trabajo en el proyecto",
-        description:
-          "¡Primer proyecto completado! Ahora, divide tu trabajo en piezas rastreables con elementos de trabajo. ¡Vamos!",
+        title: "No hay tareas en el proyecto",
+        description: "¡Primer proyecto completado! Ahora, divide tu trabajo en piezas rastreables con tareas. ¡Vamos!",
         primary_button: {
-          text: "Crear nuevo elemento de trabajo",
+          text: "Crear nuevo tarea",
         },
       },
       assigned: {
-        title: "No hay elementos de trabajo aún",
-        description: "Los elementos de trabajo asignados a ti se pueden rastrear desde aquí.",
+        title: "No hay tareas aún",
+        description: "Los tareas asignados a ti se pueden rastrear desde aquí.",
         primary_button: {
-          text: "Crear nuevo elemento de trabajo",
+          text: "Crear nuevo tarea",
         },
       },
       created: {
-        title: "No hay elementos de trabajo aún",
-        description: "Todos los elementos de trabajo creados por ti vienen aquí, rastréalos aquí directamente.",
+        title: "No hay tareas aún",
+        description: "Todos los tareas creados por ti vienen aquí, rastréalos aquí directamente.",
         primary_button: {
-          text: "Crear nuevo elemento de trabajo",
+          text: "Crear nuevo tarea",
         },
       },
       subscribed: {
-        title: "No hay elementos de trabajo aún",
-        description: "Suscríbete a los elementos de trabajo que te interesan, rastréalos todos aquí.",
+        title: "No hay tareas aún",
+        description: "Suscríbete a los tareas que te interesan, rastréalos todos aquí.",
       },
       "custom-view": {
-        title: "No hay elementos de trabajo aún",
-        description: "Elementos de trabajo que aplican a los filtros, rastréalos todos aquí.",
+        title: "No hay tareas aún",
+        description: "Tareas que aplican a los filtros, rastréalos todos aquí.",
       },
     },
     delete_view: {
@@ -1672,7 +1671,7 @@ export default {
         exporting: "Exportando",
         previous_exports: "Exportaciones anteriores",
         export_separate_files: "Exportar los datos en archivos separados",
-        filters_info: "Aplica filtros para exportar elementos de trabajo específicos según tus criterios.",
+        filters_info: "Aplica filtros para exportar tareas específicos según tus criterios.",
         modal: {
           title: "Exportar a",
           toasts: {
@@ -1791,16 +1790,16 @@ export default {
     stats: {
       workload: "Carga de trabajo",
       overview: "Resumen",
-      created: "Elementos de trabajo creados",
-      assigned: "Elementos de trabajo asignados",
-      subscribed: "Elementos de trabajo suscritos",
+      created: "Tareas creados",
+      assigned: "Tareas asignados",
+      subscribed: "Tareas suscritos",
       state_distribution: {
-        title: "Elementos de trabajo por estado",
-        empty: "Crea elementos de trabajo para verlos por estados en el gráfico para un mejor análisis.",
+        title: "Tareas por estado",
+        empty: "Crea tareas para verlos por estados en el gráfico para un mejor análisis.",
       },
       priority_distribution: {
-        title: "Elementos de trabajo por Prioridad",
-        empty: "Crea elementos de trabajo para verlos por prioridad en el gráfico para un mejor análisis.",
+        title: "Tareas por Prioridad",
+        empty: "Crea tareas para verlos por prioridad en el gráfico para un mejor análisis.",
       },
       recent_activity: {
         title: "Actividad reciente",
@@ -1827,19 +1826,19 @@ export default {
       activity: {
         title: "Aún no hay actividades",
         description:
-          "¡Comienza creando un nuevo elemento de trabajo! Agrégale detalles y propiedades. Explora más en Plane para ver tu actividad.",
+          "¡Comienza creando un nuevo tarea! Agrégale detalles y propiedades. Explora más en Plane para ver tu actividad.",
       },
       assigned: {
-        title: "No hay elementos de trabajo asignados a ti",
-        description: "Los elementos de trabajo asignados a ti se pueden rastrear desde aquí.",
+        title: "No hay tareas asignados a ti",
+        description: "Los tareas asignados a ti se pueden rastrear desde aquí.",
       },
       created: {
-        title: "Aún no hay elementos de trabajo",
-        description: "Todos los elementos de trabajo creados por ti aparecen aquí, rastréalos directamente aquí.",
+        title: "Aún no hay tareas",
+        description: "Todos los tareas creados por ti aparecen aquí, rastréalos directamente aquí.",
       },
       subscribed: {
-        title: "Aún no hay elementos de trabajo",
-        description: "Suscríbete a los elementos de trabajo que te interesen, rastréalos todos aquí.",
+        title: "Aún no hay tareas",
+        description: "Suscríbete a los tareas que te interesen, rastréalos todos aquí.",
       },
     },
   },
@@ -1869,9 +1868,8 @@ export default {
       project_lead: "Líder del proyecto",
       default_assignee: "Asignado por defecto",
       guest_super_permissions: {
-        title: "Otorgar acceso de visualización a todos los elementos de trabajo para usuarios invitados:",
-        sub_heading:
-          "Esto permitirá a los invitados tener acceso de visualización a todos los elementos de trabajo del proyecto.",
+        title: "Otorgar acceso de visualización a todos los tareas para usuarios invitados:",
+        sub_heading: "Esto permitirá a los invitados tener acceso de visualización a todos los tareas del proyecto.",
       },
       invite_members: {
         title: "Invitar miembros",
@@ -1981,27 +1979,25 @@ export default {
     automations: {
       label: "Automatizaciones",
       "auto-archive": {
-        title: "Archivar automáticamente elementos de trabajo cerrados",
-        description:
-          "Plane archivará automáticamente los elementos de trabajo que hayan sido completados o cancelados.",
-        duration: "Archivar automáticamente elementos de trabajo cerrados durante",
+        title: "Archivar automáticamente tareas cerrados",
+        description: "Plane archivará automáticamente los tareas que hayan sido completados o cancelados.",
+        duration: "Archivar automáticamente tareas cerrados durante",
       },
       "auto-close": {
-        title: "Cerrar automáticamente elementos de trabajo",
-        description:
-          "Plane cerrará automáticamente los elementos de trabajo que no hayan sido completados o cancelados.",
-        duration: "Cerrar automáticamente elementos de trabajo inactivos durante",
+        title: "Cerrar automáticamente tareas",
+        description: "Plane cerrará automáticamente los tareas que no hayan sido completados o cancelados.",
+        duration: "Cerrar automáticamente tareas inactivos durante",
         auto_close_status: "Estado de cierre automático",
       },
     },
     empty_state: {
       labels: {
         title: "Aún no hay etiquetas",
-        description: "Crea etiquetas para organizar y filtrar elementos de trabajo en tu proyecto.",
+        description: "Crea etiquetas para organizar y filtrar tareas en tu proyecto.",
       },
       estimates: {
         title: "Aún no hay sistemas de estimación",
-        description: "Crea un conjunto de estimaciones para comunicar el volumen de trabajo por elemento de trabajo.",
+        description: "Crea un conjunto de estimaciones para comunicar el volumen de trabajo por tarea.",
         primary_button: "Agregar sistema de estimación",
       },
     },
@@ -2059,16 +2055,16 @@ export default {
     start_date: "Fecha de inicio",
     end_date: "Fecha de finalización",
     in_your_timezone: "En tu zona horaria",
-    transfer_work_items: "Transferir {count} elementos de trabajo",
+    transfer_work_items: "Transferir {count} tareas",
     date_range: "Rango de fechas",
     add_date: "Agregar fecha",
     active_cycle: {
       label: "Ciclo activo",
       progress: "Progreso",
       chart: "Gráfico de avance",
-      priority_issue: "Elementos de trabajo prioritarios",
+      priority_issue: "Tareas prioritarios",
       assignees: "Asignados",
-      issue_burndown: "Avance de elementos de trabajo",
+      issue_burndown: "Avance de tareas",
       ideal: "Ideal",
       current: "Actual",
       labels: "Etiquetas",
@@ -2151,19 +2147,19 @@ export default {
         },
       },
       no_issues: {
-        title: "No hay elementos de trabajo agregados al ciclo",
-        description: "Agrega o crea elementos de trabajo que desees delimitar y entregar dentro de este ciclo",
+        title: "No hay tareas agregados al ciclo",
+        description: "Agrega o crea tareas que desees delimitar y entregar dentro de este ciclo",
         primary_button: {
-          text: "Crear nuevo elemento de trabajo",
+          text: "Crear nuevo tarea",
         },
         secondary_button: {
-          text: "Agregar elemento de trabajo existente",
+          text: "Agregar tarea existente",
         },
       },
       completed_no_issues: {
-        title: "No hay elementos de trabajo en el ciclo",
+        title: "No hay tareas en el ciclo",
         description:
-          "No hay elementos de trabajo en el ciclo. Los elementos de trabajo están transferidos u ocultos. Para ver elementos de trabajo ocultos si los hay, actualiza tus propiedades de visualización según corresponda.",
+          "No hay tareas en el ciclo. Los tareas están transferidos u ocultos. Para ver tareas ocultos si los hay, actualiza tus propiedades de visualización según corresponda.",
       },
       active: {
         title: "No hay ciclo activo",
@@ -2180,28 +2176,28 @@ export default {
   project_issues: {
     empty_state: {
       no_issues: {
-        title: "Crea un elemento de trabajo y asígnalo a alguien, incluso a ti mismo",
+        title: "Crea un tarea y asígnalo a alguien, incluso a ti mismo",
         description:
-          "Piensa en los elementos de trabajo como trabajos, tareas, trabajo o JTBD. Los cuales nos gustan. Un elemento de trabajo y sus sub-elementos de trabajo son generalmente acciones basadas en tiempo asignadas a miembros de tu equipo. Tu equipo crea, asigna y completa elementos de trabajo para mover tu proyecto hacia su objetivo.",
+          "Piensa en los tareas como trabajos, tareas, trabajo o JTBD. Los cuales nos gustan. Un tarea y sus sub-tareas son generalmente acciones basadas en tiempo asignadas a miembros de tu equipo. Tu equipo crea, asigna y completa tareas para mover tu proyecto hacia su objetivo.",
         primary_button: {
-          text: "Crea tu primer elemento de trabajo",
+          text: "Crea tu primer tarea",
           comic: {
-            title: "Los elementos de trabajo son bloques de construcción en Plane.",
+            title: "Los tareas son bloques de construcción en Plane.",
             description:
-              "Rediseñar la interfaz de Plane, Cambiar la marca de la empresa o Lanzar el nuevo sistema de inyección de combustible son ejemplos de elementos de trabajo que probablemente tienen sub-elementos de trabajo.",
+              "Rediseñar la interfaz de Plane, Cambiar la marca de la empresa o Lanzar el nuevo sistema de inyección de combustible son ejemplos de tareas que probablemente tienen sub-tareas.",
           },
         },
       },
       no_archived_issues: {
-        title: "Aún no hay elementos de trabajo archivados",
+        title: "Aún no hay tareas archivados",
         description:
-          "Manualmente o a través de automatización, puedes archivar elementos de trabajo que estén completados o cancelados. Encuéntralos aquí una vez archivados.",
+          "Manualmente o a través de automatización, puedes archivar tareas que estén completados o cancelados. Encuéntralos aquí una vez archivados.",
         primary_button: {
           text: "Establecer automatización",
         },
       },
       issues_empty_filter: {
-        title: "No se encontraron elementos de trabajo que coincidan con los filtros aplicados",
+        title: "No se encontraron tareas que coincidan con los filtros aplicados",
         secondary_button: {
           text: "Limpiar todos los filtros",
         },
@@ -2219,7 +2215,7 @@ export default {
       general: {
         title: "Mapea los hitos de tu proyecto a Módulos y rastrea el trabajo agregado fácilmente.",
         description:
-          "Un grupo de elementos de trabajo que pertenecen a un padre lógico y jerárquico forman un módulo. Piensa en ellos como una forma de rastrear el trabajo por hitos del proyecto. Tienen sus propios períodos y fechas límite, así como análisis para ayudarte a ver qué tan cerca o lejos estás de un hito.",
+          "Un grupo de tareas que pertenecen a un padre lógico y jerárquico forman un módulo. Piensa en ellos como una forma de rastrear el trabajo por hitos del proyecto. Tienen sus propios períodos y fechas límite, así como análisis para ayudarte a ver qué tan cerca o lejos estás de un hito.",
         primary_button: {
           text: "Construye tu primer módulo",
           comic: {
@@ -2230,13 +2226,13 @@ export default {
         },
       },
       no_issues: {
-        title: "No hay elementos de trabajo en el módulo",
-        description: "Crea o agrega elementos de trabajo que quieras lograr como parte de este módulo",
+        title: "No hay tareas en el módulo",
+        description: "Crea o agrega tareas que quieras lograr como parte de este módulo",
         primary_button: {
-          text: "Crear nuevos elementos de trabajo",
+          text: "Crear nuevos tareas",
         },
         secondary_button: {
-          text: "Agregar un elemento de trabajo existente",
+          text: "Agregar un tarea existente",
         },
       },
       archived: {
@@ -2273,7 +2269,7 @@ export default {
         primary_button: {
           text: "Crea tu primera vista",
           comic: {
-            title: "Las vistas funcionan sobre las propiedades de los Elementos de trabajo.",
+            title: "Las vistas funcionan sobre las propiedades de los Tareas.",
             description:
               "Puedes crear una vista desde aquí con tantas propiedades como filtros como consideres apropiado.",
           },
@@ -2296,7 +2292,7 @@ export default {
         title:
           "Escribe una nota, un documento o una base de conocimiento completa. Obtén ayuda de Galileo, el asistente de IA de Plane, para comenzar",
         description:
-          "Las páginas son espacios para pensamientos en Plane. Toma notas de reuniones, fórmalas fácilmente, integra elementos de trabajo, organízalas usando una biblioteca de componentes y mantenlas todas en el contexto de tu proyecto. Para hacer cualquier documento rápidamente, invoca a Galileo, la IA de Plane, con un atajo o haciendo clic en un botón.",
+          "Las páginas son espacios para pensamientos en Plane. Toma notas de reuniones, fórmalas fácilmente, integra tareas, organízalas usando una biblioteca de componentes y mantenlas todas en el contexto de tu proyecto. Para hacer cualquier documento rápidamente, invoca a Galileo, la IA de Plane, con un atajo o haciendo clic en un botón.",
         primary_button: {
           text: "Crea tu primera página",
         },
@@ -2332,10 +2328,10 @@ export default {
   issue_relation: {
     empty_state: {
       search: {
-        title: "No se encontraron elementos de trabajo coincidentes",
+        title: "No se encontraron tareas coincidentes",
       },
       no_issues: {
-        title: "No se encontraron elementos de trabajo",
+        title: "No se encontraron tareas",
       },
     },
   },
@@ -2343,8 +2339,7 @@ export default {
     empty_state: {
       general: {
         title: "Aún no hay comentarios",
-        description:
-          "Los comentarios pueden usarse como un espacio de discusión y seguimiento para los elementos de trabajo",
+        description: "Los comentarios pueden usarse como un espacio de discusión y seguimiento para los tareas",
       },
     },
   },
@@ -2378,12 +2373,12 @@ export default {
         title: "Selecciona para ver detalles.",
       },
       all: {
-        title: "No hay elementos de trabajo asignados",
-        description: "Las actualizaciones de elementos de trabajo asignados a ti se pueden \n ver aquí",
+        title: "No hay tareas asignados",
+        description: "Las actualizaciones de tareas asignados a ti se pueden \n ver aquí",
       },
       mentions: {
-        title: "No hay elementos de trabajo asignados",
-        description: "Las actualizaciones de elementos de trabajo asignados a ti se pueden \n ver aquí",
+        title: "No hay tareas asignados",
+        description: "Las actualizaciones de tareas asignados a ti se pueden \n ver aquí",
       },
     },
     tabs: {
@@ -2407,19 +2402,19 @@ export default {
   active_cycle: {
     empty_state: {
       progress: {
-        title: "Agrega elementos de trabajo al ciclo para ver su progreso",
+        title: "Agrega tareas al ciclo para ver su progreso",
       },
       chart: {
-        title: "Agrega elementos de trabajo al ciclo para ver el gráfico de avance.",
+        title: "Agrega tareas al ciclo para ver el gráfico de avance.",
       },
       priority_issue: {
-        title: "Observa los elementos de trabajo de alta prioridad abordados en el ciclo de un vistazo.",
+        title: "Observa los tareas de alta prioridad abordados en el ciclo de un vistazo.",
       },
       assignee: {
-        title: "Agrega asignados a los elementos de trabajo para ver un desglose del trabajo por asignados.",
+        title: "Agrega asignados a los tareas para ver un desglose del trabajo por asignados.",
       },
       label: {
-        title: "Agrega etiquetas a los elementos de trabajo para ver el desglose del trabajo por etiquetas.",
+        title: "Agrega etiquetas a los tareas para ver el desglose del trabajo por etiquetas.",
       },
     },
   },
@@ -2428,7 +2423,7 @@ export default {
       inbox: {
         title: "Intake no está habilitado para el proyecto.",
         description:
-          "Intake te ayuda a gestionar las solicitudes entrantes a tu proyecto y agregarlas como elementos de trabajo en tu flujo de trabajo. Habilita Intake desde la configuración del proyecto para gestionar las solicitudes.",
+          "Intake te ayuda a gestionar las solicitudes entrantes a tu proyecto y agregarlas como tareas en tu flujo de trabajo. Habilita Intake desde la configuración del proyecto para gestionar las solicitudes.",
         primary_button: {
           text: "Gestionar funciones",
         },
@@ -2468,11 +2463,11 @@ export default {
     },
   },
   workspace_draft_issues: {
-    draft_an_issue: "Borrador de elemento de trabajo",
+    draft_an_issue: "Borrador de tarea",
     empty_state: {
-      title: "Los elementos de trabajo a medio escribir y pronto los comentarios aparecerán aquí.",
+      title: "Los tareas a medio escribir y pronto los comentarios aparecerán aquí.",
       description:
-        "Para probar esto, comienza a agregar un elemento de trabajo y déjalo a medias o crea tu primer borrador a continuación. 😉",
+        "Para probar esto, comienza a agregar un tarea y déjalo a medias o crea tu primer borrador a continuación. 😉",
       primary_button: {
         text: "Crea tu primer borrador",
       },
@@ -2484,7 +2479,7 @@ export default {
     toasts: {
       created: {
         success: "Borrador creado",
-        error: "No se pudo crear el elemento de trabajo. Por favor, inténtalo de nuevo.",
+        error: "No se pudo crear el tarea. Por favor, inténtalo de nuevo.",
       },
       deleted: {
         success: "Borrador eliminado",
@@ -2580,37 +2575,37 @@ export default {
   importer: {
     github: {
       title: "GitHub",
-      description: "Importa elementos de trabajo desde repositorios de GitHub y sincronízalos.",
+      description: "Importa tareas desde repositorios de GitHub y sincronízalos.",
     },
     jira: {
       title: "Jira",
-      description: "Importa elementos de trabajo y epics desde proyectos y epics de Jira.",
+      description: "Importa tareas y epics desde proyectos y epics de Jira.",
     },
   },
   exporter: {
     csv: {
       title: "CSV",
-      description: "Exporta elementos de trabajo a un archivo CSV.",
+      description: "Exporta tareas a un archivo CSV.",
       short_description: "Exportar como csv",
     },
     excel: {
       title: "Excel",
-      description: "Exporta elementos de trabajo a un archivo Excel.",
+      description: "Exporta tareas a un archivo Excel.",
       short_description: "Exportar como excel",
     },
     xlsx: {
       title: "Excel",
-      description: "Exporta elementos de trabajo a un archivo Excel.",
+      description: "Exporta tareas a un archivo Excel.",
       short_description: "Exportar como excel",
     },
     json: {
       title: "JSON",
-      description: "Exporta elementos de trabajo a un archivo JSON.",
+      description: "Exporta tareas a un archivo JSON.",
       short_description: "Exportar como json",
     },
   },
   default_global_view: {
-    all_issues: "Todos los elementos de trabajo",
+    all_issues: "Todos los tareas",
     assigned: "Asignados",
     created: "Creados",
     subscribed: "Suscritos",
@@ -2654,7 +2649,7 @@ export default {
     order_by: {
       name: "Nombre",
       progress: "Progreso",
-      issues: "Número de elementos de trabajo",
+      issues: "Número de tareas",
       due_date: "Fecha de vencimiento",
       created_at: "Fecha de creación",
       manual: "Manual",

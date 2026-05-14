@@ -12,6 +12,7 @@ import { cn } from "@plane/utils";
 import emptyModule from "@/app/assets/empty-state/module.svg?url";
 // components
 import { EmptyState } from "@/components/common/empty-state";
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { ModuleLayoutRoot } from "@/components/issues/issue-layouts/roots/module-layout-root";
 import { ModuleAnalyticsSidebar } from "@/components/modules";
@@ -32,7 +33,7 @@ function ModuleIssuesPage({ params }: Route.ComponentProps) {
   // const { issuesFilter } = useIssues(EIssuesStoreType.MODULE);
   // local storage
   const { setValue, storedValue } = useLocalStorage("module_sidebar_collapsed", "false");
-  const isSidebarCollapsed = storedValue ? (storedValue === "true" ? true : false) : false;
+  const isSidebarCollapsed = storedValue === "true";
   // fetching module details
   const { error } = useSWR(`CURRENT_MODULE_DETAILS_${moduleId}`, () =>
     fetchModuleDetails(workspaceSlug, projectId, moduleId)
@@ -48,7 +49,7 @@ function ModuleIssuesPage({ params }: Route.ComponentProps) {
 
   // const activeLayout = issuesFilter?.issueFilters?.displayFilters?.layout;
   return (
-    <>
+    <FeatureGate flag="ENABLE_MODULES">
       <PageHead title={pageTitle} />
       {error ? (
         <EmptyState
@@ -76,7 +77,7 @@ function ModuleIssuesPage({ params }: Route.ComponentProps) {
           )}
         </div>
       )}
-    </>
+    </FeatureGate>
   );
 }
 

@@ -7,6 +7,8 @@
 import { observer } from "mobx-react";
 // components
 import { BulkOperationsUpgradeBanner } from "@/components/issues/bulk-operations/upgrade-banner";
+// constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 // hooks
 import { useMultipleSelectStore } from "@/hooks/store/use-multiple-select-store";
 import type { TSelectionHelper } from "@/hooks/use-multiple-select";
@@ -22,6 +24,7 @@ export const IssueBulkOperationsRoot = observer(function IssueBulkOperationsRoot
   const { isSelectionActive } = useMultipleSelectStore();
 
   if (!isSelectionActive || selectionHelpers.isSelectionDisabled) return null;
+  if (!FEATURE_FLAGS.ENABLE_LICENSE_PROMOTION) return null;
 
   return <BulkOperationsUpgradeBanner className={className} />;
 });

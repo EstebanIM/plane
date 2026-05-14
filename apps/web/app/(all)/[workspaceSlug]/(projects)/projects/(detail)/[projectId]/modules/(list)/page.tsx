@@ -17,6 +17,7 @@ import { calculateTotalFilters } from "@plane/utils";
 import darkModulesAsset from "@/app/assets/empty-state/disabled-feature/modules-dark.webp?url";
 import lightModulesAsset from "@/app/assets/empty-state/disabled-feature/modules-light.webp?url";
 // components
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { DetailedEmptyState } from "@/components/empty-state/detailed-empty-state-root";
 import { ModuleAppliedFiltersList, ModulesListView } from "@/components/modules";
@@ -83,7 +84,7 @@ function ProjectModulesPage({ params }: Route.ComponentProps) {
     );
 
   return (
-    <>
+    <FeatureGate flag="ENABLE_MODULES">
       <PageHead title={pageTitle} />
       <div className="flex h-full w-full flex-col">
         {(calculateTotalFilters(currentProjectFilters) !== 0 || currentProjectDisplayFilters?.favorites) && (
@@ -98,7 +99,7 @@ function ProjectModulesPage({ params }: Route.ComponentProps) {
         )}
         <ModulesListView />
       </div>
-    </>
+    </FeatureGate>
   );
 }
 

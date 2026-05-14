@@ -4,11 +4,17 @@
  * See the LICENSE file for details.
  */
 
-import IntlMessageFormat from "intl-messageformat";
+import { IntlMessageFormat } from "intl-messageformat";
 import { get, merge } from "lodash-es";
 import { makeAutoObservable, runInAction } from "mobx";
 // constants
-import { FALLBACK_LANGUAGE, SUPPORTED_LANGUAGES, LANGUAGE_STORAGE_KEY, ETranslationFiles } from "../constants";
+import {
+  DEFAULT_LANGUAGE,
+  FALLBACK_LANGUAGE,
+  SUPPORTED_LANGUAGES,
+  LANGUAGE_STORAGE_KEY,
+  ETranslationFiles,
+} from "../constants";
 // core translations imports
 import { enCore, locales } from "../locales";
 // types
@@ -29,7 +35,7 @@ export class TranslationStore {
   // Cache for IntlMessageFormat instances
   private messageCache: Map<string, IntlMessageFormat> = new Map();
   // Current language
-  currentLocale: TLanguage = FALLBACK_LANGUAGE;
+  currentLocale: TLanguage = DEFAULT_LANGUAGE;
   // Loading state
   isLoading: boolean = true;
   isInitialized: boolean = false;
@@ -59,8 +65,9 @@ export class TranslationStore {
       return;
     }
 
-    // Fallback to default language
-    this.setLanguage(FALLBACK_LANGUAGE);
+    // Default to Spanish for new users; FALLBACK_LANGUAGE sigue siendo "en"
+    // para resolver claves que aún no estén traducidas.
+    this.setLanguage(DEFAULT_LANGUAGE);
   }
 
   /** Loads the translations for the current language */
@@ -162,7 +169,7 @@ export class TranslationStore {
       const merged = modules.reduce((acc: any, module: any) => merge(acc, module.default), {});
       return { default: merged };
     } catch (error) {
-      throw new Error(`Failed to import and merge files for ${language}: ${error}`);
+      throw new Error(`Failed to import and merge files for ${language}`, { cause: error });
     }
   }
 

@@ -20,6 +20,7 @@ import { calculateTotalFilters } from "@plane/utils";
 import darkEmptyState from "@/app/assets/empty-state/disabled-feature/cycles-dark.webp?url";
 import lightEmptyState from "@/app/assets/empty-state/disabled-feature/cycles-light.webp?url";
 // components
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { CycleAppliedFiltersList } from "@/components/cycles/applied-filters";
 import { CyclesView } from "@/components/cycles/cycles-view";
@@ -92,7 +93,7 @@ function ProjectCyclesPage({ params }: Route.ComponentProps) {
   if (loader) return <CycleModuleListLayoutLoader />;
 
   return (
-    <>
+    <FeatureGate flag="ENABLE_CYCLES">
       <PageHead title={pageTitle} />
       <div className="h-full w-full">
         <CycleCreateUpdateModal
@@ -134,7 +135,7 @@ function ProjectCyclesPage({ params }: Route.ComponentProps) {
           </>
         )}
       </div>
-    </>
+    </FeatureGate>
   );
 }
 

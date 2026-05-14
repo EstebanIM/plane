@@ -6,7 +6,10 @@
 
 import { useEffect, useState } from "react";
 import { observer } from "mobx-react";
+import { Navigate } from "react-router";
 import useSWR from "swr";
+// local constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 // plane imports
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { useTranslation } from "@plane/i18n";
@@ -54,6 +57,10 @@ function WebhooksListPage({ params }: Route.ComponentProps) {
   useEffect(() => {
     if (!showCreateWebhookModal && webhookSecretKey) clearSecretKey();
   }, [showCreateWebhookModal, webhookSecretKey, clearSecretKey]);
+
+  if (!FEATURE_FLAGS.ENABLE_WEBHOOKS) {
+    return <Navigate to={`/${workspaceSlug}/`} replace />;
+  }
 
   if (workspaceUserInfo && !canPerformWorkspaceAdminActions) {
     return <NotAuthorizedView section="settings" className="h-auto" />;

@@ -11,6 +11,7 @@ import { cn } from "@plane/utils";
 import emptyCycle from "@/app/assets/empty-state/cycle.svg?url";
 // components
 import { EmptyState } from "@/components/common/empty-state";
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import useCyclesDetails from "@/components/cycles/active-cycle/use-cycles-details";
 import { CycleDetailsSidebar } from "@/components/cycles/analytics-sidebar";
@@ -39,7 +40,7 @@ function CycleDetailPage({ params }: Route.ComponentProps) {
     cycleId,
   });
   // derived values
-  const isSidebarCollapsed = storedValue ? (storedValue === true ? true : false) : false;
+  const isSidebarCollapsed = storedValue === true;
   const cycle = getCycleById(cycleId);
   const project = getProjectById(projectId);
   const pageTitle = project?.name && cycle?.name ? `${project?.name} - ${cycle?.name}` : undefined;
@@ -51,7 +52,7 @@ function CycleDetailPage({ params }: Route.ComponentProps) {
 
   // const activeLayout = issuesFilter?.issueFilters?.displayFilters?.layout;
   return (
-    <>
+    <FeatureGate flag="ENABLE_CYCLES">
       <PageHead title={pageTitle} />
       {!cycle && !loader ? (
         <EmptyState
@@ -86,7 +87,7 @@ function CycleDetailPage({ params }: Route.ComponentProps) {
           </div>
         </>
       )}
-    </>
+    </FeatureGate>
   );
 }
 

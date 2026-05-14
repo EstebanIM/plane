@@ -14,6 +14,8 @@ import type { EUserWorkspaceRoles } from "@plane/types";
 import { cn } from "@plane/utils";
 // components
 import { SidebarNavItem } from "@/components/sidebar/sidebar-navigation";
+// constants
+import { FEATURE_FLAGS } from "@/constants/feature-flags";
 // hooks
 import { useAppTheme } from "@/hooks/store/use-app-theme";
 import { useUserPermissions } from "@/hooks/store/user";
@@ -66,9 +68,11 @@ export const SidebarWorkspaceMenuItem = observer(function SidebarWorkspaceMenuIt
           />
           <p className="text-13 leading-5 font-medium">{t(item.labelTranslationKey)}</p>
         </div>
-        <div className="flex-shrink-0">
-          <UpgradeBadge />
-        </div>
+        {FEATURE_FLAGS.ENABLE_LICENSE_PROMOTION && (
+          <div className="flex-shrink-0">
+            <UpgradeBadge />
+          </div>
+        )}
       </SidebarNavItem>
     </Link>
   );
