@@ -6,9 +6,14 @@ WORKDIR /app
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+# Mirror para entornos donde registry.npmjs.org está bloqueado
+ENV COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
+ENV npm_config_registry="https://registry.npmmirror.com/"
+ENV COREPACK_DEFAULT_TO_LATEST=0
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 COPY . .
-RUN corepack enable pnpm && pnpm add -g turbo
+RUN corepack enable pnpm && corepack prepare pnpm@10.32.1 --activate && pnpm add -g turbo
 RUN pnpm install
 
 EXPOSE 17300

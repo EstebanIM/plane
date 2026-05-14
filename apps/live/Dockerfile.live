@@ -4,7 +4,12 @@ FROM node:22-alpine AS base
 # Setup pnpm package manager with corepack and configure global bin directory for caching
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+# Mirror para entornos donde registry.npmjs.org está bloqueado
+ENV COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
+ENV npm_config_registry="https://registry.npmmirror.com/"
+ENV COREPACK_DEFAULT_TO_LATEST=0
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+RUN corepack enable && corepack prepare pnpm@10.32.1 --activate
 
 # *****************************************************************************
 # STAGE 1: Prune the project
