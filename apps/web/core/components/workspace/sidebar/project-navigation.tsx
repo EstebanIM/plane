@@ -148,8 +148,9 @@ export const ProjectNavigation = observer(function ProjectNavigation(props: TPro
       return navItems;
     };
 
-    // sort navigation items by sortOrder
-    const sortedNavigationItems = navigationItems(workspaceSlug, projectId).toSorted(
+    // sort navigation items by sortOrder; usamos spread + sort para no mutar el
+    // arreglo original y mantener compatibilidad con targets de TS sin toSorted.
+    const sortedNavigationItems = [...navigationItems(workspaceSlug, projectId)].toSorted(
       (a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)
     );
 

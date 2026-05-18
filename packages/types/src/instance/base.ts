@@ -11,6 +11,7 @@ import type {
   TInstanceImageConfigurationKeys,
   TInstanceAuthenticationKeys,
   TInstanceWorkspaceConfigurationKeys,
+  TInstanceBrandingConfigurationKeys,
   TCoreLoginMediums,
 } from "./";
 import type { TExtendedLoginMediums } from "./auth-ee";
@@ -66,6 +67,11 @@ export interface IInstanceConfig {
   admin_base_url: string | undefined;
   is_self_managed: boolean;
   instance_changelog_url?: string;
+  // Branding configurable desde el Instance Admin (Fase 5).
+  platform_name?: string;
+  platform_logo_url?: string;
+  platform_compact_logo_url?: string;
+  platform_accent_color?: string;
 }
 
 export interface IInstanceAdmin {
@@ -85,7 +91,8 @@ export type TInstanceConfigurationKeys =
   | TInstanceEmailConfigurationKeys
   | TInstanceImageConfigurationKeys
   | TInstanceAuthenticationKeys
-  | TInstanceWorkspaceConfigurationKeys;
+  | TInstanceWorkspaceConfigurationKeys
+  | TInstanceBrandingConfigurationKeys;
 
 export interface IInstanceConfiguration {
   id: string;

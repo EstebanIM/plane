@@ -63,6 +63,10 @@ class InstanceEndpoint(BaseAPIView):
             POSTHOG_HOST,
             UNSPLASH_ACCESS_KEY,
             LLM_API_KEY,
+            PLATFORM_NAME,
+            PLATFORM_LOGO_URL,
+            PLATFORM_COMPACT_LOGO_URL,
+            PLATFORM_ACCENT_COLOR,
         ) = get_configuration_value(
             [
                 {
@@ -122,6 +126,22 @@ class InstanceEndpoint(BaseAPIView):
                     "key": "LLM_API_KEY",
                     "default": os.environ.get("LLM_API_KEY", ""),
                 },
+                {
+                    "key": "PLATFORM_NAME",
+                    "default": os.environ.get("PLATFORM_NAME", "Plane"),
+                },
+                {
+                    "key": "PLATFORM_LOGO_URL",
+                    "default": os.environ.get("PLATFORM_LOGO_URL", ""),
+                },
+                {
+                    "key": "PLATFORM_COMPACT_LOGO_URL",
+                    "default": os.environ.get("PLATFORM_COMPACT_LOGO_URL", ""),
+                },
+                {
+                    "key": "PLATFORM_ACCENT_COLOR",
+                    "default": os.environ.get("PLATFORM_ACCENT_COLOR", ""),
+                },
             ]
         )
 
@@ -165,6 +185,12 @@ class InstanceEndpoint(BaseAPIView):
 
         data["instance_changelog_url"] = settings.INSTANCE_CHANGELOG_URL
         data["is_self_managed"] = settings.IS_SELF_MANAGED
+
+        # Branding configurable desde el Instance Admin
+        data["platform_name"] = PLATFORM_NAME or "Plane"
+        data["platform_logo_url"] = PLATFORM_LOGO_URL or ""
+        data["platform_compact_logo_url"] = PLATFORM_COMPACT_LOGO_URL or ""
+        data["platform_accent_color"] = PLATFORM_ACCENT_COLOR or ""
 
         instance_data = serializer.data
         instance_data["workspaces_exist"] = Workspace.objects.count() >= 1
