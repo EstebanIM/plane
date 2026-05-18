@@ -4,8 +4,16 @@
 
 # Python imports
 import json
+import os
 import uuid
 from uuid import UUID
+
+
+# Fase 4: solo notificaciones in-app. Cuando ENABLE_EMAIL_NOTIFICATIONS no
+# está activo, el worker omite la creación de EmailNotificationLog y el
+# trabajador de stack-email no tiene nada que enviar. Para reactivar emails,
+# definir ENABLE_EMAIL_NOTIFICATIONS=1 en apps/api/.env y reiniciar el api.
+EMAIL_NOTIFICATIONS_ENABLED = os.environ.get("ENABLE_EMAIL_NOTIFICATIONS", "0") == "1"
 
 
 # Module imports
@@ -404,8 +412,9 @@ def notifications(
                             },
                         )
                     )
-                    # Create email notification
-                    if send_email:
+                    # Create email notification (Fase 4: omitido si los emails
+                    # están deshabilitados a nivel de instancia).
+                    if send_email and EMAIL_NOTIFICATIONS_ENABLED:
                         bulk_email_logs.append(
                             EmailNotificationLog(
                                 triggered_by_id=actor_id,
@@ -476,8 +485,8 @@ def notifications(
                             activity=issue_activity,
                         )
 
-                        # check for email notifications
-                        if preference.mention:
+                        # check for email notifications (Fase 4: gated por flag global)
+                        if preference.mention and EMAIL_NOTIFICATIONS_ENABLED:
                             bulk_email_logs.append(
                                 EmailNotificationLog(
                                     triggered_by_id=actor_id,
@@ -569,7 +578,7 @@ def notifications(
                                 },
                             )
                         )
-                        if preference.mention:
+                        if preference.mention and EMAIL_NOTIFICATIONS_ENABLED:
                             bulk_email_logs.append(
                                 EmailNotificationLog(
                                     triggered_by_id=actor_id,
@@ -618,7 +627,7 @@ def notifications(
                                 issue_id=issue_id,
                                 activity=issue_activity,
                             )
-                            if preference.mention:
+                            if preference.mention and EMAIL_NOTIFICATIONS_ENABLED:
                                 bulk_email_logs.append(
                                     EmailNotificationLog(
                                         triggered_by_id=actor_id,

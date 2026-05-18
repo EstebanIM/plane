@@ -11,6 +11,10 @@ export const FEATURE_FLAGS = {
   ENABLE_INTEGRATIONS: false,
   ENABLE_WEBHOOKS: false,
   ENABLE_LICENSE_PROMOTION: false,
+  // Fase 4: las notificaciones por email están deshabilitadas a nivel de
+  // instancia. La sección de preferencias en el perfil muestra solo un
+  // mensaje informativo en lugar del formulario de toggles.
+  ENABLE_EMAIL_NOTIFICATIONS: false,
 } as const;
 
 export type TFeatureFlag = keyof typeof FEATURE_FLAGS;
