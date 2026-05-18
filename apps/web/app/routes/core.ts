@@ -72,6 +72,11 @@ export const coreRoutes: RouteConfigEntry[] = [
           route(":workspaceSlug/analytics/:tabId", "./(all)/[workspaceSlug]/(projects)/analytics/[tabId]/page.tsx"),
         ]),
 
+        // Audit (Fase 6: solo administradores)
+        layout("./(all)/[workspaceSlug]/(projects)/audit/layout.tsx", [
+          route(":workspaceSlug/audit", "./(all)/[workspaceSlug]/(projects)/audit/page.tsx"),
+        ]),
+
         // Browse
         layout("./(all)/[workspaceSlug]/(projects)/browse/[workItem]/layout.tsx", [
           route(":workspaceSlug/browse/:workItem", "./(all)/[workspaceSlug]/(projects)/browse/[workItem]/page.tsx"),

@@ -36,6 +36,7 @@ from plane.app.views import (
     WorkspaceHomePreferenceViewSet,
     WorkspaceStickyViewSet,
     WorkspaceUserPreferenceViewSet,
+    WorkspaceAuditActivityEndpoint,
 )
 
 
@@ -256,5 +257,11 @@ urlpatterns = [
         "workspaces/<str:slug>/sidebar-preferences/",
         WorkspaceUserPreferenceViewSet.as_view(),
         name="workspace-user-preference",
+    ),
+    # Fase 6: vista de auditoría agregada a nivel workspace (solo admins)
+    path(
+        "workspaces/<str:slug>/audit/activities/",
+        WorkspaceAuditActivityEndpoint.as_view(),
+        name="workspace-audit-activities",
     ),
 ]

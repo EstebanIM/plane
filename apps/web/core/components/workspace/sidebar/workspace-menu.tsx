@@ -9,6 +9,7 @@ import { observer } from "mobx-react";
 import { useParams } from "next/navigation";
 import { Disclosure, Transition } from "@headlessui/react";
 // plane imports
+import { ShieldCheck } from "lucide-react";
 import { AnalyticsIcon, CycleIcon, ProjectIcon, ViewsIcon } from "@plane/propel/icons";
 import { EUserWorkspaceRoles } from "@plane/types";
 // constants
@@ -60,6 +61,14 @@ export const SidebarWorkspaceMenu = observer(function SidebarWorkspaceMenu() {
       // Fase 2: solo administradores ven analíticas avanzadas.
       access: [EUserWorkspaceRoles.ADMIN],
       Icon: AnalyticsIcon,
+    },
+    {
+      // Fase 6: vista de auditoría solo para administradores.
+      key: "audit",
+      labelTranslationKey: "sidebar.audit",
+      href: `/${workspaceSlug}/audit/`,
+      access: [EUserWorkspaceRoles.ADMIN],
+      Icon: ShieldCheck,
     },
   ];
 

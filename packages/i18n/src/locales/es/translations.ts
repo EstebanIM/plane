@@ -15,6 +15,7 @@ export default {
     workspace: "Espacio de trabajo",
     views: "Vistas",
     analytics: "Análisis",
+    audit: "Auditoría",
     work_items: "Tareas",
     cycles: "Ciclos",
     modules: "Módulos",

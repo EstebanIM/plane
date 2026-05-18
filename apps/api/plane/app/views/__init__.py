@@ -77,6 +77,7 @@ from .workspace.user import (
     UserActivityGraphEndpoint,
     UserIssueCompletedGraphEndpoint,
 )
+from .workspace.audit import WorkspaceAuditActivityEndpoint
 from .workspace.estimate import WorkspaceEstimatesEndpoint
 from .workspace.module import WorkspaceModulesEndpoint
 from .workspace.cycle import WorkspaceCyclesEndpoint
