@@ -15,6 +15,7 @@ import { Tabs } from "@plane/propel/tabs";
 // components
 import { cn } from "@plane/utils";
 import AnalyticsFilterActions from "@/components/analytics/analytics-filter-actions";
+import { NotAuthorizedView } from "@/components/auth-screens/not-authorized-view";
 import { PageHead } from "@/components/core/page-title";
 // hooks
 import { useCommandPalette } from "@/hooks/store/use-command-palette";
@@ -48,6 +49,8 @@ function AnalyticsPage({ params }: Route.ComponentProps) {
     [EUserPermissions.ADMIN, EUserPermissions.MEMBER],
     EUserPermissionsLevel.WORKSPACE
   );
+  // Fase 2: el acceso a analíticas avanzadas se restringe a administradores.
+  const canViewAnalytics = allowPermissions([EUserPermissions.ADMIN], EUserPermissionsLevel.WORKSPACE);
 
   const workspaceSlug = params.workspaceSlug;
   const ANALYTICS_TABS = useAnalyticsTabs(workspaceSlug.toString());
@@ -65,6 +68,15 @@ function AnalyticsPage({ params }: Route.ComponentProps) {
     setSelectedTab(value);
     router.push(`/${currentWorkspace?.slug}/analytics/${value}`);
   };
+
+  if (!canViewAnalytics) {
+    return (
+      <>
+        <PageHead title={pageTitle} />
+        <NotAuthorizedView section="general" />
+      </>
+    );
+  }
 
   return (
     <>

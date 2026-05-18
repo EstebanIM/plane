@@ -57,7 +57,8 @@ export const SidebarWorkspaceMenu = observer(function SidebarWorkspaceMenu() {
       key: "analytics",
       labelTranslationKey: "sidebar.analytics",
       href: `/${workspaceSlug}/analytics/`,
-      access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
+      // Fase 2: solo administradores ven analíticas avanzadas.
+      access: [EUserWorkspaceRoles.ADMIN],
       Icon: AnalyticsIcon,
     },
   ];
