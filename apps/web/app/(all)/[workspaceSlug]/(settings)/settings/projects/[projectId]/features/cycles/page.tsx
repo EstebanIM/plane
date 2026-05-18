@@ -10,6 +10,7 @@ import { useTranslation } from "@plane/i18n";
 // components
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { NotAuthorizedView } from "@/components/auth-screens/not-authorized-view";
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { ProjectSettingsFeatureControlItem } from "@/components/settings/project/content/feature-control-item";
 import { SettingsContentWrapper } from "@/components/settings/content-wrapper";
@@ -39,25 +40,27 @@ function FeaturesCyclesSettingsPage({ params }: Route.ComponentProps) {
   }
 
   return (
-    <SettingsContentWrapper header={<FeaturesCyclesProjectSettingsHeader />}>
-      <PageHead title={pageTitle} />
-      <section className="w-full">
-        <SettingsHeading
-          title={t("project_settings.features.cycles.title")}
-          description={t("project_settings.features.cycles.description")}
-        />
-        <div className="mt-7">
-          <ProjectSettingsFeatureControlItem
-            title={t("project_settings.features.cycles.toggle_title")}
-            description={t("project_settings.features.cycles.toggle_description")}
-            featureProperty="cycle_view"
-            projectId={projectId}
-            value={!!currentProjectDetails?.cycle_view}
-            workspaceSlug={workspaceSlug}
+    <FeatureGate flag="ENABLE_CYCLES">
+      <SettingsContentWrapper header={<FeaturesCyclesProjectSettingsHeader />}>
+        <PageHead title={pageTitle} />
+        <section className="w-full">
+          <SettingsHeading
+            title={t("project_settings.features.cycles.title")}
+            description={t("project_settings.features.cycles.description")}
           />
-        </div>
-      </section>
-    </SettingsContentWrapper>
+          <div className="mt-7">
+            <ProjectSettingsFeatureControlItem
+              title={t("project_settings.features.cycles.toggle_title")}
+              description={t("project_settings.features.cycles.toggle_description")}
+              featureProperty="cycle_view"
+              projectId={projectId}
+              value={!!currentProjectDetails?.cycle_view}
+              workspaceSlug={workspaceSlug}
+            />
+          </div>
+        </section>
+      </SettingsContentWrapper>
+    </FeatureGate>
   );
 }
 

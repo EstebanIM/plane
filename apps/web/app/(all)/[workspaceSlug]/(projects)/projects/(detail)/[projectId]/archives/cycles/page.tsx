@@ -6,6 +6,7 @@
 
 import { observer } from "mobx-react";
 // components
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { ArchivedCycleLayoutRoot } from "@/components/cycles/archived-cycles";
 import { ArchivedCyclesHeader } from "@/components/cycles/archived-cycles/header";
@@ -23,13 +24,13 @@ function ProjectArchivedCyclesPage({ params }: Route.ComponentProps) {
   const pageTitle = project?.name && `${project?.name} - Archived cycles`;
 
   return (
-    <>
+    <FeatureGate flag="ENABLE_CYCLES">
       <PageHead title={pageTitle} />
       <div className="relative flex h-full w-full flex-col overflow-hidden">
         <ArchivedCyclesHeader />
         <ArchivedCycleLayoutRoot />
       </div>
-    </>
+    </FeatureGate>
   );
 }
 

@@ -10,6 +10,7 @@ import { useTranslation } from "@plane/i18n";
 // components
 import { EUserPermissions, EUserPermissionsLevel } from "@plane/constants";
 import { NotAuthorizedView } from "@/components/auth-screens/not-authorized-view";
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { SettingsContentWrapper } from "@/components/settings/content-wrapper";
 import { SettingsHeading } from "@/components/settings/heading";
@@ -39,25 +40,27 @@ function FeaturesModulesSettingsPage({ params }: Route.ComponentProps) {
   }
 
   return (
-    <SettingsContentWrapper header={<FeaturesModulesProjectSettingsHeader />}>
-      <PageHead title={pageTitle} />
-      <section className="w-full">
-        <SettingsHeading
-          title={t("project_settings.features.modules.title")}
-          description={t("project_settings.features.modules.description")}
-        />
-        <div className="mt-7">
-          <ProjectSettingsFeatureControlItem
-            title={t("project_settings.features.modules.toggle_title")}
-            description={t("project_settings.features.modules.toggle_description")}
-            featureProperty="module_view"
-            projectId={projectId}
-            value={!!currentProjectDetails?.module_view}
-            workspaceSlug={workspaceSlug}
+    <FeatureGate flag="ENABLE_MODULES">
+      <SettingsContentWrapper header={<FeaturesModulesProjectSettingsHeader />}>
+        <PageHead title={pageTitle} />
+        <section className="w-full">
+          <SettingsHeading
+            title={t("project_settings.features.modules.title")}
+            description={t("project_settings.features.modules.description")}
           />
-        </div>
-      </section>
-    </SettingsContentWrapper>
+          <div className="mt-7">
+            <ProjectSettingsFeatureControlItem
+              title={t("project_settings.features.modules.toggle_title")}
+              description={t("project_settings.features.modules.toggle_description")}
+              featureProperty="module_view"
+              projectId={projectId}
+              value={!!currentProjectDetails?.module_view}
+              workspaceSlug={workspaceSlug}
+            />
+          </div>
+        </section>
+      </SettingsContentWrapper>
+    </FeatureGate>
   );
 }
 

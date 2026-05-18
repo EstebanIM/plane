@@ -80,6 +80,7 @@ const CreationTrend = observer(function CreationTrend() {
         key,
         label: t(`priority.${key}`, { defaultValue: key.charAt(0).toUpperCase() + key.slice(1) }),
         stroke,
+        fill: stroke,
         showDot: false,
         smoothCurves: true,
         dashedLine: false,

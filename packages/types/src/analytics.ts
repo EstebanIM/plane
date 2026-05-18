@@ -49,6 +49,11 @@ export type TAnalyticsFilterParams = {
   project_ids?: string;
   cycle_id?: string;
   module_id?: string;
+  // Parámetros usados por los gráficos custom de analytics agregados en el fork.
+  x_axis?: string;
+  y_axis?: string;
+  group_by?: string;
+  epic?: boolean;
 };
 
 // service types

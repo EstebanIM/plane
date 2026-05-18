@@ -6,6 +6,7 @@
 
 import { observer } from "mobx-react";
 // components
+import { FeatureGate } from "@/components/common/feature-gate";
 import { PageHead } from "@/components/core/page-title";
 import { ArchivedModuleLayoutRoot, ArchivedModulesHeader } from "@/components/modules";
 // hooks
@@ -22,13 +23,13 @@ function ProjectArchivedModulesPage({ params }: Route.ComponentProps) {
   const pageTitle = project?.name && `${project?.name} - Archived modules`;
 
   return (
-    <>
+    <FeatureGate flag="ENABLE_MODULES">
       <PageHead title={pageTitle} />
       <div className="relative flex h-full w-full flex-col overflow-hidden">
         <ArchivedModulesHeader />
         <ArchivedModuleLayoutRoot />
       </div>
-    </>
+    </FeatureGate>
   );
 }
 
