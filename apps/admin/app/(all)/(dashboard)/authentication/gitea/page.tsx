@@ -14,6 +14,7 @@ import { Loader, ToggleSwitch } from "@plane/ui";
 import giteaLogo from "@/app/assets/logos/gitea-logo.svg?url";
 // components
 import { AuthenticationMethodCard } from "@/components/authentication/authentication-method-card";
+import { AdminFeatureGate } from "@/components/common/feature-gate";
 import { PageWrapper } from "@/components/common/page-wrapper";
 // hooks
 import { useInstance } from "@/hooks/store";
@@ -55,6 +56,7 @@ const InstanceGiteaAuthenticationPage = observer(function InstanceGiteaAuthentic
     await updateConfigPromise
       .then(() => {
         setIsSubmitting(false);
+        return undefined;
       })
       .catch((err) => {
         console.error(err);
@@ -65,39 +67,41 @@ const InstanceGiteaAuthenticationPage = observer(function InstanceGiteaAuthentic
   const isGiteaEnabled = enableGiteaConfig === "1";
 
   return (
-    <PageWrapper
-      customHeader={
-        <AuthenticationMethodCard
-          name="Gitea"
-          description="Allow members to login or sign up to plane with their Gitea accounts."
-          icon={<img src={giteaLogo} height={24} width={24} alt="Gitea Logo" />}
-          config={
-            <ToggleSwitch
-              value={isGiteaEnabled}
-              onChange={() => {
-                updateConfig("IS_GITEA_ENABLED", isGiteaEnabled ? "0" : "1");
-              }}
-              size="sm"
-              disabled={isSubmitting || !formattedConfig}
-            />
-          }
-          disabled={isSubmitting || !formattedConfig}
-          withBorder={false}
-        />
-      }
-    >
-      {formattedConfig ? (
-        <InstanceGiteaConfigForm config={formattedConfig} />
-      ) : (
-        <Loader className="space-y-8">
-          <Loader.Item height="50px" width="25%" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" width="50%" />
-        </Loader>
-      )}
-    </PageWrapper>
+    <AdminFeatureGate flag="ENABLE_GITEA_AUTH">
+      <PageWrapper
+        customHeader={
+          <AuthenticationMethodCard
+            name="Gitea"
+            description="Allow members to login or sign up to plane with their Gitea accounts."
+            icon={<img src={giteaLogo} height={24} width={24} alt="Gitea Logo" />}
+            config={
+              <ToggleSwitch
+                value={isGiteaEnabled}
+                onChange={() => {
+                  updateConfig("IS_GITEA_ENABLED", isGiteaEnabled ? "0" : "1");
+                }}
+                size="sm"
+                disabled={isSubmitting || !formattedConfig}
+              />
+            }
+            disabled={isSubmitting || !formattedConfig}
+            withBorder={false}
+          />
+        }
+      >
+        {formattedConfig ? (
+          <InstanceGiteaConfigForm config={formattedConfig} />
+        ) : (
+          <Loader className="space-y-8">
+            <Loader.Item height="50px" width="25%" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" width="50%" />
+          </Loader>
+        )}
+      </PageWrapper>
+    </AdminFeatureGate>
   );
 });
 export const meta: Route.MetaFunction = () => [{ title: "Gitea Authentication - God Mode" }];

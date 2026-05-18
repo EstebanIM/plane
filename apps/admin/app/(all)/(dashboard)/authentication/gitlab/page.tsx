@@ -13,6 +13,7 @@ import { Loader, ToggleSwitch } from "@plane/ui";
 import GitlabLogo from "@/app/assets/logos/gitlab-logo.svg?url";
 // components
 import { AuthenticationMethodCard } from "@/components/authentication/authentication-method-card";
+import { AdminFeatureGate } from "@/components/common/feature-gate";
 import { PageWrapper } from "@/components/common/page-wrapper";
 // hooks
 import { useInstance } from "@/hooks/store";
@@ -57,6 +58,7 @@ const InstanceGitlabAuthenticationPage = observer(function InstanceGitlabAuthent
     await updateConfigPromise
       .then(() => {
         setIsSubmitting(false);
+        return undefined;
       })
       .catch((err) => {
         console.error(err);
@@ -64,43 +66,45 @@ const InstanceGitlabAuthenticationPage = observer(function InstanceGitlabAuthent
       });
   };
   return (
-    <PageWrapper
-      customHeader={
-        <AuthenticationMethodCard
-          name="GitLab"
-          description="Allow members to login or sign up to plane with their GitLab accounts."
-          icon={<img src={GitlabLogo} height={24} width={24} alt="GitLab Logo" />}
-          config={
-            <ToggleSwitch
-              value={Boolean(parseInt(enableGitlabConfig))}
-              onChange={() => {
-                if (Boolean(parseInt(enableGitlabConfig)) === true) {
-                  updateConfig("IS_GITLAB_ENABLED", "0");
-                } else {
-                  updateConfig("IS_GITLAB_ENABLED", "1");
-                }
-              }}
-              size="sm"
-              disabled={isSubmitting || !formattedConfig}
-            />
-          }
-          disabled={isSubmitting || !formattedConfig}
-          withBorder={false}
-        />
-      }
-    >
-      {formattedConfig ? (
-        <InstanceGitlabConfigForm config={formattedConfig} />
-      ) : (
-        <Loader className="space-y-8">
-          <Loader.Item height="50px" width="25%" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" />
-          <Loader.Item height="50px" width="50%" />
-        </Loader>
-      )}
-    </PageWrapper>
+    <AdminFeatureGate flag="ENABLE_GITLAB_AUTH">
+      <PageWrapper
+        customHeader={
+          <AuthenticationMethodCard
+            name="GitLab"
+            description="Allow members to login or sign up to plane with their GitLab accounts."
+            icon={<img src={GitlabLogo} height={24} width={24} alt="GitLab Logo" />}
+            config={
+              <ToggleSwitch
+                value={Boolean(parseInt(enableGitlabConfig))}
+                onChange={() => {
+                  if (Boolean(parseInt(enableGitlabConfig)) === true) {
+                    updateConfig("IS_GITLAB_ENABLED", "0");
+                  } else {
+                    updateConfig("IS_GITLAB_ENABLED", "1");
+                  }
+                }}
+                size="sm"
+                disabled={isSubmitting || !formattedConfig}
+              />
+            }
+            disabled={isSubmitting || !formattedConfig}
+            withBorder={false}
+          />
+        }
+      >
+        {formattedConfig ? (
+          <InstanceGitlabConfigForm config={formattedConfig} />
+        ) : (
+          <Loader className="space-y-8">
+            <Loader.Item height="50px" width="25%" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" />
+            <Loader.Item height="50px" width="50%" />
+          </Loader>
+        )}
+      </PageWrapper>
+    </AdminFeatureGate>
   );
 });
 
