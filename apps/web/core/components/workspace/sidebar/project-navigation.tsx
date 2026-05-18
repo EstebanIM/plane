@@ -150,7 +150,8 @@ export const ProjectNavigation = observer(function ProjectNavigation(props: TPro
 
     // sort navigation items by sortOrder; usamos spread + sort para no mutar el
     // arreglo original y mantener compatibilidad con targets de TS sin toSorted.
-    const sortedNavigationItems = [...navigationItems(workspaceSlug, projectId)].toSorted(
+    // eslint-disable-next-line unicorn/no-array-sort
+    const sortedNavigationItems = [...navigationItems(workspaceSlug, projectId)].sort(
       (a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)
     );
 
